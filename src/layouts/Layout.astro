@@ -1,0 +1,59 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Ana Oliveira - Engineering Manager, Technical Leader, Team Builder" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 76, 112, 67;        /* Sage green */
+		--accent-light: 147, 177, 140; /* Light sage */
+		--accent-dark: 44, 64, 39;     /* Dark forest green */
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			rgb(245, 243, 238) 60%
+		);
+	}
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		background: rgb(245, 243, 238); /* Eggshell white */
+		background-size: 224px;
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>

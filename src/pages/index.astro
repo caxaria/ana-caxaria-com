@@ -1,0 +1,317 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TimelineEntry from '../components/TimelineEntry.astro';
+
+const timelineEntries = [
+  {
+    year: "2021 - Present",
+    title: "Engineering Manager",
+    organization: "Cloudflare",
+    description: "Leading teams to enhance internet performance and security. Focused on fostering collaboration, implementing robust processes, and scaling impactful engineering solutions.",
+    type: "role",
+    isLeft: true,
+    order: 0
+  },
+  {
+    year: "2020 - 2021",
+    title: "VP of Engineering",
+    organization: "Verbz.ai",
+    description: "Directed engineering and product development at Verbz, a voice-first productivity app. Key contributions included process optimization, tech roadmap definition, and team growth in a fast-paced startup environment.",
+    type: "role",
+    isLeft: false,
+    order: 1
+  },
+  {
+    year: "2017 - 2019",
+    title: "Engineering Manager",
+    organization: "e.near",
+    description: "Managed distributed teams of 15-20 people, mentoring team leads and driving architectural decisions to enhance performance and delivery. Co-led the company's annual 'Performance Review,' defining strategic focus areas.",
+    type: "role",
+    isLeft: true,
+    order: 2
+  },
+  {
+    year: "2017 - 2019",
+    title: "LXScala Co-organizer",
+    organization: "Community Leader",
+    description: "Organized the Lisbon Scala conference, managing budgeting, logistics, speaker line-ups, and content quality to deliver an outstanding event experience for attendees.",
+    type: "speaking",
+    isLeft: false,
+    order: 3
+  },
+  {
+    year: "2015 - 2017",
+    title: "Team Lead",
+    organization: "e.near",
+    description: "Led the development of SaaS and B2C products serving millions of users worldwide. Focused on team culture, mentoring, and optimizing engineering practices.",
+    type: "role",
+    isLeft: true,
+    order: 4
+  },
+  {
+    year: "2013 - 2015",
+    title: "Technical Lead",
+    organization: "Miniclip",
+    description: "Delivered and supported games with over 1M daily users. Played a key role in development, CI processes, and internal libraries for third-party integration.",
+    type: "role",
+    isLeft: false,
+    order: 5
+  },
+  {
+    year: "2011 - 2012",
+    title: "iOS Developer",
+    organization: "Chillycode",
+    description: "Independently developed and launched two iOS applications, including a social network client and a physics-based game, working closely with designers to define the product.",
+    type: "role",
+    isLeft: true,
+    order: 6
+  }
+];
+---
+
+<Layout title="Ana Oliveira - Engineering Manager | Technical Leader | Team Builder">
+  <main>
+    <section class="hero">
+      <h1>Ana Oliveira</h1>
+      <p class="tagline">Engineering Manager | Technical Leader | Team Builder</p>
+      <p class="bio">
+        I am a passionate engineering leader with a focus on optimizing impact, fostering growth, 
+        and driving technological excellence. My career is built on empowering teams, improving 
+        processes, and delivering impactful results across diverse domains.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:ana@caxaria.dev" class="contact-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Email
+        </a>
+        <a href="https://linkedin.com/in/anacristinaoliv" class="contact-button" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <h2>My Journey</h2>
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        {timelineEntries.map((entry) => (
+          <TimelineEntry
+            {...entry}
+            colorIndex={entry.order}
+            totalEntries={timelineEntries.length+1}
+          />
+        ))}
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="mailto:ana@caxaria.dev" class="social-icon" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/anacristinaoliv" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 2rem;
+    width: 1200px;
+    max-width: calc(100% - 2rem);
+    color: rgb(44, 64, 39);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 4rem 0;
+    background: rgba(76, 112, 67, 0.1);
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    color: rgb(var(--accent));
+    margin-bottom: 1.5rem;
+  }
+
+  .bio {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: rgb(68, 68, 68);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .contact-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(var(--accent), 0.1);
+    border: 1px solid rgba(var(--accent), 0.2);
+    border-radius: 2rem;
+    color: rgb(var(--accent));
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .contact-button:hover {
+    background: rgba(var(--accent), 0.2);
+    border-color: rgba(var(--accent), 0.4);
+    transform: translateY(-2px);
+  }
+
+  .contact-button svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  .timeline h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(var(--accent));
+    margin-bottom: 4rem;
+  }
+
+  .timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  .timeline-container::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .timeline-line {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      rgb(76, 112, 67),    /* Sage green */
+      rgb(133, 147, 82),   /* Olive */
+      rgb(196, 143, 86),   /* Light ochre */
+      rgb(207, 117, 43),   /* October orange */
+      rgb(166, 94, 46),    /* Rust brown */
+      rgb(89, 55, 48)      /* Deep brown */
+    );
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(var(--accent), 0.1);
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .social-icon {
+    color: rgb(var(--accent));
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: rgba(var(--accent), 0.1);
+  }
+
+  .social-icon:hover {
+    color: rgb(var(--accent-dark));
+    background: rgba(var(--accent), 0.2);
+    transform: translateY(-2px);
+  }
+
+  .social-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+    }
+
+    .bio {
+      font-size: 1rem;
+    }
+
+    .timeline h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-line {
+      left: 30px;
+    }
+
+    .timeline-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+</style>
